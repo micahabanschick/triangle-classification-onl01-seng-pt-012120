@@ -9,7 +9,7 @@ class Triangle
   end 
   
   def kind 
-    if @ab == 0 || @bc == 0 || @ca == 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
+    if @ab <= 0 || @bc <= 0 || @ca <= 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
       begin 
         raise Triangle::TriangleError
       rescue Triangle::TriangleError => error 
