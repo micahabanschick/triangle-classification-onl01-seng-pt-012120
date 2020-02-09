@@ -11,8 +11,8 @@ class Triangle
   def kind 
     if @ab == 0 || @bc == 0 || @ca == 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
       begin 
-        raise TriangleError
-      rescue TriangleError => error 
+        raise Triangle::TriangleError
+      rescue Triangle::TriangleError => error 
         puts error.message
       end 
     elsif @ab == @bc && @bc == @ca 
@@ -26,5 +26,8 @@ class Triangle
  
   class TriangleError < StandardError
     # triangle error code
+    def message
+      puts "oops"
+    end 
   end
 end
