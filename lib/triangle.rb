@@ -11,7 +11,7 @@ class Triangle
   def kind 
     if @ab <= 0 || @bc <= 0 || @ca <= 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
       begin 
-        raise Triangle::TriangleError.new
+        raise Triangle::TriangleError.new()
       rescue Triangle::TriangleError => error 
         puts error.message
       end 
