@@ -10,11 +10,14 @@ class Triangle
   
   def kind 
     if @ab <= 0 || @bc <= 0 || @ca <= 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
+      raise TriangleError
+=begin
       begin 
         raise Triangle::TriangleError.new()
       rescue Triangle::TriangleError => error 
         puts error.message
-      end 
+      end
+=end 
     elsif @ab == @bc && @bc == @ca 
       @type = :equilateral 
     elsif @ab == @bc || @bc == @ca || @ab == @ca 
