@@ -12,7 +12,7 @@ class Triangle
     if @ab <= 0 || @bc <= 0 || @ca <= 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
       begin 
         raise Triangle::TriangleError
-      rescue TriangleError => error 
+      rescue Triangle::TriangleError => error 
         puts error.message
       end 
     elsif @ab == @bc && @bc == @ca 
