@@ -12,7 +12,17 @@ class Triangle
     if @ab == 0 || @bc == 0 || @ca == 0 || (@ab + @bc) <= @ca ||  (@ab + @ca) <= @bc || (@ca + @bc) <= @ab
       begin 
         raise StandardError
-      rescue StandardError 
+      rescue StandardError => error 
+        puts error.message
+      end 
+    elsif @ab == @bc && @bc == @ca 
+      @type = :equilateral 
+    elsif @ab == @bc || @bc == @ca || @ab == @ca 
+      @type = :isosceles 
+    else 
+      @type = :scalene 
+    end 
+  end 
  
   class TriangleError < StandardError
     # triangle error code
