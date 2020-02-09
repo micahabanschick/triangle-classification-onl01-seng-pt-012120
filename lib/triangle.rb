@@ -2,7 +2,7 @@ class Triangle
   # triangle code
   attr_accessor :ab, :bc, :ca, :type
   
-  def initialize(ab:,bc:,ca:)
+  def initialize(ab,bc,ca)
     @ab = ab
     @bc = bc
     @ca = ca
